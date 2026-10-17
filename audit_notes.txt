@@ -1,0 +1,30 @@
+=== AUDIT NOTES — Day 1 ===
+Date: 2026-10-17
+
+Q1. Data split order
+   Cell # where train_test_split appears: Step 4.7
+   Does any fit_transform appear BEFORE that cell? no
+   Verdict: OK
+
+Q2. Cross-validation leakage
+   Is preprocessing inside the CV pipeline? no
+   Verdict: N/A (No Cross-Validation Used)
+
+Q3. Random seeds
+   How many times does "random_state" appear: 5 times
+   Any fit calls missing random_state? no
+   Verdict: OK
+
+Q4. Hardcoded paths
+   List any paths: None found.
+
+Q5. Dataset link in README
+   Is there a link to the Kaggle dataset? yes
+   URL if present: kagglehub.dataset_download("shashwatwork/cerebral-stroke-predictionimbalaced-dataset")
+
+Q6. Test set honesty
+   Was the same test set used in Optuna tuning? no
+   Verdict: OK
+
+Other notes:
+Notebook and README are out of sync. README claims SMOTE, Optuna, and Neural Networks, but notebook only has basic scikit-learn models and no cross-validation. We will fix this later.
